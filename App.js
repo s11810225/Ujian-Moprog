@@ -6,58 +6,60 @@ export default class App extends Component {
     super(props);
     
     this.state = {
+      namaLengkap: '',
       username: '',
-      password: '',
+      email: '',
+      alamat: '',
+      nohp: '',
     };
   }
   
   onLogin() {
-    const { username, password } = this.state;
+    const { namaLengkap, username, email, alamat, nohp } = this.state;
 
-    Alert.alert('Credentials', `${username} + ${password}`);
-  }
+    Alert.alert('Users List',`
+    Nama Lengkap\t:${namaLengkap}
+    Username\t\t\t\t\t\t\t:${username}
+    Email\t\t\t\t\t\t\t\t\t\t\t\t\t:${email}
+    Alamat\t\t\t\t\t\t\t\t\t\t\t:${alamat}
+    No Telepon\t\t\t\t\t:${nohp}`);
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.font_title}> Registration</Text>
         <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
+          value={this.state.namaLengkap}
+          onChangeText={(namaLengkap) => this.setState({ namaLengkap })}
           placeholder={'Masukan nama lengkap anda'}
           style={styles.input}
         />
         <TextInput
           value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
-          placeholder={'Masukan Username anda'}
+          placeholder={'Masukan username anda'}
           style={styles.input}
         />
         <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
+          value={this.state.email}
+          onChangeText={(email) => this.setState({ email })}
           placeholder={'Masukan email anda'}
           style={styles.input}
         />
         <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
+          value={this.state.alamat}
+          onChangeText={(alamat) => this.setState({ alamat })}
           placeholder={'Masukan alamat anda'}
           style={styles.input}
         />
         <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
+          value={this.state.nohp}
+          onChangeText={(nohp) => this.setState({ nohp })}
           placeholder={'Masukan nomor telepon'}
           style={styles.input}
         />
-        <TextInput
-          value={this.state.password}
-          onChangeText={(password) => this.setState({ password })}
-          placeholder={'Password'}
-          secureTextEntry={true}
-          style={styles.input}
-        />
+       
         
         <Button
           title={'Register'}
